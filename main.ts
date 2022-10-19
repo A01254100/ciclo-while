@@ -1,13 +1,10 @@
-let Man: game.LedSprite = null
-let Pedrito: game.LedSprite = null
-let Andrea: game.LedSprite = null
 let Javier = game.createSprite(0, 2)
+let Andrea = game.createSprite(randint(1, 4), randint(0, 4))
+let Pedrito = game.createSprite(randint(1, 4), randint(0, 4))
+let Man = game.createSprite(randint(1, 4), randint(0, 4))
 Andrea.set(LedSpriteProperty.Brightness, 100)
 Pedrito.set(LedSpriteProperty.Brightness, 110)
 Man.set(LedSpriteProperty.Brightness, 120)
-Andrea = game.createSprite(randint(1, 4), randint(0, 4))
-Pedrito = game.createSprite(randint(1, 4), randint(0, 4))
-Man = game.createSprite(randint(1, 4), randint(0, 4))
 basic.forever(function () {
     while (input.buttonIsPressed(Button.A)) {
         Javier.change(LedSpriteProperty.X, -1)
@@ -48,10 +45,10 @@ basic.forever(function () {
     }
 })
 loops.everyInterval(3000, function () {
-    Andrea = game.createSprite(randint(1, 4), randint(0, 4))
-    Pedrito = game.createSprite(randint(1, 4), randint(0, 4))
-    Man = game.createSprite(randint(1, 4), randint(0, 4))
-    Andrea.delete()
-    Man.delete()
-    Pedrito.delete()
+    Andrea.set(LedSpriteProperty.X, randint(0, 4))
+    Man.set(LedSpriteProperty.X, randint(0, 4))
+    Pedrito.set(LedSpriteProperty.X, randint(0, 4))
+    Andrea.set(LedSpriteProperty.Y, randint(0, 4))
+    Man.set(LedSpriteProperty.Y, randint(0, 4))
+    Pedrito.set(LedSpriteProperty.Y, randint(0, 4))
 })
